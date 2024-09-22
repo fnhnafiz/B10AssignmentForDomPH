@@ -28,7 +28,9 @@
     <header class="bg-[#F9F7F3]">
       <div class="w-11/12 mx-auto">
         <!-- Navbar start -->
-        <div class="navbar flex justify-between">
+        <div
+          class="navbar flex flex-wrap md:flex-nowrap gap-10 justify-center md:justify-between"
+        >
           <div>
             <button
               id="blog-btn"
@@ -42,68 +44,61 @@
             <h1 class="text-xl font-semibold">Donate Bangladesh</h1>
           </div>
           <div class="flex items-center space-x-2">
-            <div>
+            <!-- Donation Available Ammount -->
+            <button class="btn text-base font-medium">
               <img class="w-[30px]" src="./assets/coin.png" alt="Coin" />
-            </div>
-            <div class="">
-              <!-- Donation Ammount -->
-              <p class="text-base font-medium">
-                <span id="Full-Ammount" class="mr-2">5000</span>BDT
-              </p>
-            </div>
+              <!-- Available Amount -->
+              <span id="Full-available-Ammount">5000</span>BDT
+            </button>
           </div>
         </div>
         <!-- Navbar End -->
       </div>
-    </header>
-    <main class="space-y-8">
       <!-- Button section -->
       <section class="my-[100px]">
         <div class="text-center space-x-3">
           <!-- Donation Button -->
           <button
-            class="bg-[#B4F461] py-4 px-8 text-base font-semibold rounded-md"
+            class="btn bg-[#B4F461] px-8 text-base font-semibold rounded-md"
           >
             Secondary
           </button>
           <!-- History Button -->
-          <button
-            class="border border-1 text-base font-semibold px-8 py-4 rounded-md"
-          >
+          <button class="btn border text-base font-semibold px-8 rounded-md">
             History
           </button>
         </div>
       </section>
       <!-- End Of Button Section -->
+    </header>
+    <main class="space-y-8">
       <!-- Donation Section -->
       <section class="w-11/12 mx-auto">
         <!-- First Noakhali Donation Section -->
-        <div class="flex items-center gap-8 p-8 border border-1 rounded-md">
+        <div
+          class="flex flex-col md:flex-row gap-8 p-8 border border-1 rounded-md"
+        >
           <div class="flex-1">
             <img
-              class="w-full rounded-lg"
+              class="w-full h-full object-cover rounded-lg"
               src="./assets/noakhali.png"
               class="max-w-sm rounded-lg shadow-2xl"
             />
           </div>
-          <div class="flex-1 space-y-10">
+          <div class="flex-1 space-y-12">
             <!-- Noakhali Donation Amount Section -->
             <div class="flex items-center space-x-2">
-              <div>
+              <!-- Donation Ammount -->
+              <button class="text-base font-medium btn">
                 <img class="w-[30px]" src="./assets/coin.png" alt="Coin" />
-              </div>
-              <div class="">
-                <!-- Donation Ammount -->
-                <p class="text-base font-medium">
-                  <span id="Full-Ammount" class="mr-2">0</span>BDT
-                </p>
-              </div>
+                <span id="noakhali-donation-available-amount">2500</span>BDT
+              </button>
             </div>
             <!--End Noakhali Donation Amount Section -->
             <h1 class="text-xl font-bold">
               Donate for Flood at Noakhali, Bangladesh
             </h1>
-            <p class="">
+            <p>
               The recent floods in Noakhali have caused significant damage to
               homes infrastructure. Your donation will help provide essential
               supplies and to those affected by this disaster. Every
@@ -112,15 +107,37 @@
               lives of those in need.
             </p>
             <input
+              id="noakhali-input-field"
               class="w-full border border-1 p-5 rounded-md"
               type="text"
               placeholder="Write Donation Amount"
             />
+
+            <!-- Modal for click -->
+            <!-- Noakhali Donate Button -->
             <button
-              class="w-full bg-[#B4F461] py-4 text-base font-semibold rounded-md"
+              id="noakhali-donate-btn"
+              class="btn w-full bg-[#B4F461] text-base font-semibold rounded-md"
+              onclick="my_modal_5.showModal()"
             >
               Donate Now
             </button>
+            <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+              <div class="modal-box flex flex-col items-center space-y-6">
+                <h3 class="text-4xl font-bold">Congrates!</h3>
+                <img src="./assets/coin.png" alt="" />
+                <p class="text-base text-black">
+                  You Have Donated For humankind
+                </p>
+                <p class="text-2xl font-semibold">Succesfully</p>
+                <div class="modal-action">
+                  <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close Confirmation</button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
           </div>
         </div>
         <!--End of Img of NOAKHALI -->
@@ -129,10 +146,12 @@
       <!-- Donation of Feni Bangladesh Section -->
       <section class="w-11/12 mx-auto">
         <!--Second FENI Donation Section -->
-        <div class="flex items-center gap-8 p-8 border border-1 rounded-md">
+        <div
+          class="flex flex-col md:flex-row gap-8 p-8 border border-1 rounded-md"
+        >
           <div class="flex-1">
             <img
-              class="w-full rounded-lg"
+              class="w-full h-full object-cover rounded-lg"
               src="./assets/feni.png"
               class="max-w-sm rounded-lg shadow-2xl"
             />
@@ -140,15 +159,12 @@
           <div class="flex-1 space-y-12">
             <!-- Feni Donation Amount Section -->
             <div class="flex items-center space-x-2">
-              <div>
+              <!-- Donation Ammount -->
+              <button class="text-base font-medium btn">
                 <img class="w-[30px]" src="./assets/coin.png" alt="Coin" />
-              </div>
-              <div class="">
-                <!-- Donation Ammount -->
-                <p class="text-base font-medium">
-                  <span id="Full-Ammount" class="mr-2">500</span>BDT
-                </p>
-              </div>
+                <!-- FENI-donation-available-amount -->
+                <span id="feni-donation-available-amount">2500</span>BDT
+              </button>
             </div>
             <!--End Of Feni Donation Amount Section -->
             <h1 class="text-xl font-bold">
@@ -165,15 +181,37 @@
               urgent need.
             </p>
             <input
+              id="feni-input-field"
               class="w-full border border-1 p-5 rounded-md"
               type="text"
               placeholder="Write Donation Amount"
             />
+
+            <!-- Modal for click -->
+            <!-- Feni Donate Button -->
             <button
-              class="w-full bg-[#B4F461] py-4 text-base font-semibold rounded-md"
+              id="feni-donate-btn"
+              class="btn w-full bg-[#B4F461] text-base font-semibold rounded-md"
+              onclick="my_modal_5.showModal()"
             >
               Donate Now
             </button>
+            <dialog id="my_modal_6" class="modal modal-bottom sm:modal-middle">
+              <div class="modal-box flex flex-col items-center space-y-6">
+                <h3 class="text-4xl font-bold">Congrates!</h3>
+                <img src="./assets/coin.png" alt="" />
+                <p class="text-base text-black">
+                  You Have Donated For humankind
+                </p>
+                <p class="text-2xl font-semibold">Succesfully</p>
+                <div class="modal-action">
+                  <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close Confirmation</button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
           </div>
         </div>
       </section>
@@ -181,10 +219,12 @@
       <!-- Bangladesh Quota Section -->
       <section class="w-11/12 mx-auto">
         <!--Third Quota Donation Section -->
-        <div class="flex items-center gap-8 p-8 border border-1 rounded-md">
+        <div
+          class="flex flex-col md:flex-row r gap-8 p-8 border border-1 rounded-md"
+        >
           <div class="flex-1">
             <img
-              class="w-full rounded-lg"
+              class="w-full h-full object-cover rounded-lg"
               src="./assets/quota-protest.png"
               class="max-w-sm rounded-lg shadow-2xl"
             />
@@ -192,15 +232,12 @@
           <div class="flex-1 space-y-12">
             <!-- Quota Donation Amount Section -->
             <div class="flex items-center space-x-2">
-              <div>
+              <!-- Donation Ammount -->
+              <button class="text-base font-medium btn">
                 <img class="w-[30px]" src="./assets/coin.png" alt="Coin" />
-              </div>
-              <div class="">
-                <!-- Donation Ammount -->
-                <p class="text-base font-medium">
-                  <span id="Full-Ammount" class="mr-2">2500</span>BDT
-                </p>
-              </div>
+                <!-- Quota-donation-available-amount -->
+                <span id="quota-donation-available-amount">2500</span>BDT
+              </button>
             </div>
             <!--End Of Feni Donation Amount Section -->
             <h1 class="text-xl font-bold">
@@ -218,15 +255,36 @@
               their time of need.
             </p>
             <input
+              id="quota-input-field"
               class="w-full border border-1 p-5 rounded-md"
               type="text"
               placeholder="Write Donation Amount"
             />
+
+            <!-- Modal for click -->
             <button
-              class="w-full bg-[#B4F461] py-4 text-base font-semibold rounded-md"
+              id="quota-donate-btn"
+              class="btn w-full bg-[#B4F461] text-base font-semibold rounded-md"
+              onclick="my_modal_5.showModal()"
             >
               Donate Now
             </button>
+            <dialog id="my_modal_7" class="modal modal-bottom sm:modal-middle">
+              <div class="modal-box flex flex-col items-center space-y-6">
+                <h3 class="text-4xl font-bold">Congrates!</h3>
+                <img src="./assets/coin.png" alt="" />
+                <p class="text-base text-black">
+                  You Have Donated For humankind
+                </p>
+                <p class="text-2xl font-semibold">Succesfully</p>
+                <div class="modal-action">
+                  <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close Confirmation</button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
           </div>
         </div>
       </section>
