@@ -25,11 +25,11 @@
     </style>
   </head>
   <body class="font-lexend">
-    <header class="bg-[#F9F7F3]">
-      <div class="w-11/12 mx-auto">
+    <header class="backdrop-blur-md sticky top-0">
+      <div class="bg-[#F9F7F3]">
         <!-- Navbar start -->
         <div
-          class="navbar flex flex-wrap md:flex-nowrap gap-10 justify-center md:justify-between"
+          class="navbar flex flex-wrap md:flex-nowrap gap-10 justify-center md:justify-between w-11/12 mx-auto"
         >
           <div>
             <button
@@ -55,23 +55,27 @@
         <!-- Navbar End -->
       </div>
       <!-- Button section -->
-      <section class="my-[100px]">
+      <section class="my-[50px]">
         <div class="text-center space-x-3">
           <!-- Donation Button -->
           <button
+            id="donation-button"
             class="btn bg-[#B4F461] px-8 text-base font-semibold rounded-md"
           >
             Donation
           </button>
           <!-- History Button -->
-          <button class="btn border text-base font-semibold px-8 rounded-md">
+          <button
+            id="history-button"
+            class="btn border text-base font-semibold px-8 rounded-md"
+          >
             History
           </button>
         </div>
       </section>
       <!-- End Of Button Section -->
     </header>
-    <main class="space-y-8">
+    <main id="mainSectionInBody" class="space-y-8">
       <!-- Donation Section -->
       <section class="w-11/12 mx-auto">
         <!-- First Noakhali Donation Section -->
@@ -140,6 +144,7 @@
             </dialog>
           </div>
         </div>
+
         <!--End of Img of NOAKHALI -->
       </section>
       <!--End of First Noakhali Donation Section -->
@@ -291,6 +296,11 @@
       <!--End of Bangladesh Quota Section -->
       <!--End of Donation Section -->
     </main>
+    <!-- History Item In Noakhali -->
+    <div
+      id="noakhali-history-item"
+      class="hidden w-11/12 mx-auto space-y-3"
+    ></div>
     <!-- JavaScript Link Added -->
     <script src="./js/donation.js"></script>
   </body>
