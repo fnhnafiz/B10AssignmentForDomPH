@@ -1,3 +1,15 @@
+// Blog & Home Button Click EventListener
+
+// function blogPage() {
+//   window.location.href = "blog.html";
+// }
+// function homePage() {
+//   window.location.href = "index.html";
+// }
+document.getElementById("blog-btn").addEventListener("click", function () {
+  window.location.href = "blog.html";
+});
+
 // Noakhali donate button
 const noakhaliDonateBtn = document.getElementById("noakhali-donate-btn");
 noakhaliDonateBtn.addEventListener("click", function () {
