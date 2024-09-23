@@ -54,6 +54,8 @@ historyBtn.addEventListener("click", function () {
   historyList.classList.remove("hidden");
   const feniHistoryList = document.getElementById("feni-history-item");
   feniHistoryList.classList.remove("hidden");
+  const quotaHistoryList = document.getElementById("quota-history-item");
+  quotaHistoryList.classList.remove("hidden");
 });
 // When Click Donation Button
 const donationButton = document.getElementById("donation-button");
@@ -67,6 +69,8 @@ donationButton.addEventListener("click", function () {
   historyList.classList.add("hidden");
   const feniHistoryList = document.getElementById("feni-history-item");
   feniHistoryList.classList.add("hidden");
+  const quotaHistoryList = document.getElementById("quota-history-item");
+  quotaHistoryList.classList.add("hidden");
 });
 
 // Feni Donation EventListener
@@ -105,6 +109,47 @@ feniDonationBtn.addEventListener("click", function () {
     );
   } else {
     document.getElementById("my_modal_6").classList.add("hidden");
+    window.location.reload();
+    alert("Try Again Later");
+  }
+});
+
+// Dnation for Quota
+
+const quotaDonationBtn = document.getElementById("quota-donate-btn");
+quotaDonationBtn.addEventListener("click", function () {
+  const totalAmountQuota = getAvailableAmountId(
+    "total-donation-available-Ammount"
+  );
+  const quotaInputvalue = getInputFieldValueId("quota-input-field");
+  const quoataAvailableAmount = getAvailableAmountId(
+    "quota-donation-available-amount"
+  );
+  if (quotaInputvalue > 0 && !isNaN(quotaInputvalue)) {
+    const totalAmount = quoataAvailableAmount + quotaInputvalue;
+    document.getElementById("quota-donation-available-amount").innerText =
+      totalAmount.toFixed(2);
+    const totalAvailableAmount = totalAmountQuota - quotaInputvalue;
+    document.getElementById("total-donation-available-Ammount").innerText =
+      totalAvailableAmount.toFixed(2);
+
+    // Quota history List
+    const quotahistoryItem = document.createElement("div");
+    quotahistoryItem.className = "bg-white p-4 border space-y-3";
+    quotahistoryItem.innerHTML = `
+    <p class = "font-bold text-xl">${quotaInputvalue.toFixed(
+      2
+    )} Taka is Aid for Injured in the Quota Movement</p>
+    <p> ${new Date()}</p>
+    
+    `;
+    const quotaHistoryContainer = getHistoryListId("quota-history-item");
+    quotaHistoryContainer.insertBefore(
+      quotahistoryItem,
+      quotaHistoryContainer.firstChild
+    );
+  } else {
+    document.getElementById("my_modal_7").classList.add("hidden");
     window.location.reload();
     alert("Try Again Later");
   }
