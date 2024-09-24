@@ -19,7 +19,7 @@ noakhaliDonateBtn.addEventListener("click", function () {
   const totalDonationAmount = parseFloat(
     document.getElementById("total-donation-available-Ammount").innerText
   );
-  if (totalDonationAmount < noakhaliInputField || totalDonationAmount > 0) {
+  if (totalDonationAmount < noakhaliInputField && totalDonationAmount > 0) {
     alert("try again");
     document.getElementById("my_modal_5").classList.add("hidden");
     window.location.reload();
@@ -102,7 +102,7 @@ feniDonationBtn.addEventListener("click", function () {
   );
 
   // total available Amount
-  if (totalAvailableAmount < feniInputValue || totalAvailableAmount > 0) {
+  if (totalAvailableAmount < feniInputValue && totalAvailableAmount > 0) {
     alert("try again");
     document.getElementById("my_modal_6").classList.add("hidden");
     window.location.reload();
@@ -150,7 +150,7 @@ quotaDonationBtn.addEventListener("click", function () {
     "quota-donation-available-amount"
   );
 
-  if (totalAmountQuota < quotaInputvalue || totalAmountQuota > 0) {
+  if (totalAmountQuota < quotaInputvalue && totalAmountQuota > 0) {
     alert("try again");
     document.getElementById("my_modal_7").classList.add("hidden");
     window.location.reload();
