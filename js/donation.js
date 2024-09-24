@@ -16,11 +16,16 @@ noakhaliDonateBtn.addEventListener("click", function () {
   const noakhaliInputField = parseFloat(
     document.getElementById("noakhali-input-field").value
   );
-
+  const totalDonationAmount = parseFloat(
+    document.getElementById("total-donation-available-Ammount").innerText
+  );
+  if (totalDonationAmount < noakhaliInputField || totalDonationAmount > 0) {
+    alert("try again");
+    document.getElementById("my_modal_5").classList.add("hidden");
+    window.location.reload();
+    return;
+  }
   if (noakhaliInputField > 0 && !isNaN(noakhaliInputField)) {
-    const totalDonationAmount = parseFloat(
-      document.getElementById("total-donation-available-Ammount").innerText
-    );
     const noakhaliAvailableAmount = parseFloat(
       document.getElementById("noakhali-donation-available-amount").innerText
     );
@@ -95,7 +100,14 @@ feniDonationBtn.addEventListener("click", function () {
   const feniAvailableAmount = getDonationTextValueId(
     "feni-donation-available-amount"
   );
+
   // total available Amount
+  if (totalAvailableAmount < feniInputValue || totalAvailableAmount > 0) {
+    alert("try again");
+    document.getElementById("my_modal_6").classList.add("hidden");
+    window.location.reload();
+    return;
+  }
   if (feniInputValue > 0 && !isNaN(feniInputValue)) {
     // feni Donation amount
     const totalFeniAmount = feniAvailableAmount + feniInputValue;
@@ -137,6 +149,13 @@ quotaDonationBtn.addEventListener("click", function () {
   const quoataAvailableAmount = getAvailableAmountId(
     "quota-donation-available-amount"
   );
+
+  if (totalAmountQuota < quotaInputvalue || totalAmountQuota > 0) {
+    alert("try again");
+    document.getElementById("my_modal_7").classList.add("hidden");
+    window.location.reload();
+    return;
+  }
   if (quotaInputvalue > 0 && !isNaN(quotaInputvalue)) {
     const totalAmount = quoataAvailableAmount + quotaInputvalue;
     document.getElementById("quota-donation-available-amount").innerText =
